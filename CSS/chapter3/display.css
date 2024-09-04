@@ -1,0 +1,32 @@
+/* We know that h2 tag  is block function, but we can change it to inline by display function */
+/* h2 {
+    display: inline;
+    background-color: pink;
+} */
+
+
+/* We know that span is inline function, but we can change it to block by display function */
+/* span {
+    display: block;
+    background-color: green;
+} */
+
+span {
+    background-color: pink;
+    border: 2px solid black;
+    height: 100px;
+    width: 200px;
+    padding: 50px;
+    margin: 20px;
+
+}
+
+div {
+    border: 2px solid black;
+    height: 100px;
+    width: 200px;
+    padding: 50px;
+    margin: 20px;
+}
+
+/* By display inline---> no height, no width, no padding, margin only have left and right */

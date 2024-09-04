@@ -1,0 +1,83 @@
+/* Height-->By default, it sets the content area height of the element */
+
+/* Width-->By default, it sets the content area width of the element */
+
+/* Border---> USed to set an element's border
+        1. border-width
+        2. boder-style
+        3. boder-color */
+
+/* Border Shorthand
+    width|style|color --> border: 5px solid black;
+ */
+
+ /* Border sides---> To control an individual side of the box
+  1. border-left 
+  2. border-right 
+  3. border-top
+  4. border-bottom 
+  */
+
+  /* Padding 
+  1. padding-right
+  2. padding-left
+  3. padding-top
+  4. padding-buttom 
+
+  for all sides--> padding:50px;
+  top & bottom|left & right--> padding: 1px 2px;
+  top|left & right |bottom--> padding:1px 2px 3px;
+  top|right|bottom|left---> padding: 1px 2px 3px 4px; clockwise
+
+   */
+
+   /* Margin
+  1. Margin-right
+  2. Margin-left
+  3. Margin-top
+  4. Margin-buttom 
+  for all sides-->
+  top & bottom|left & right--> 
+  top|left & right |bottom--> 
+  top|right|bottom|left---> 
+    */
+div {
+    height: 200px;
+    width: 500px;
+    background-color: pink;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: black; */
+    border: 5px solid black;
+    /* border-left-color: blue;
+    border-left-style: dashed; */
+    /* border-top: 5px dashed blue; */
+    /* border-radius: 10px */
+    border-top-right-radius: 10px;
+    padding-top: 10px;
+    /* margin-bottom: 25px;
+    Margin-right: 25px;
+    Margin-left: 25px;
+    Margin-top: 25px; */
+    margin: 20px;
+}
+
+h1 {
+    /* border-width: 2px;
+    border-style: dashed; 
+    border-color: green; */
+    border: 2px dashed green;
+    border-radius: 50px;
+    margin: 0px;
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 10px;
+    /* padding-left:25px ;
+    padding-right: 25px; */
+    padding : 10px 25px 30px 40px;
+    background-color: yellow;
+
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox and radio button</title>
+ </head>
+ <body>
+    <form action="/server">
+        <input type="checkbox" id="age" name="age"/>
+        <label for="age">I am 18+</label>
+        <div>
+            <input type="radio" name="fruit" id="apple" value="apple" />
+            <label for="apple"> Apple</label>
+            <input type="radio" name="fruit" id="mango" value="mango" />
+            <label for="mango">mango</label>
+            <input type="radio" name="fruit" id="banana" value="banana" />
+            <label for="banana">banana</label>
+        </div>
+        <br>
+        <div>
+            Choose your subjects:
+            <input type="checkbox" id="math" name="subjects" value="math"/>
+            <label for="math">Math</label>
+            <input type="checkbox" id="science" name="subjects" value="science"/>
+            <label for="science">Science</label>
+            <input type="checkbox" id="english" name="subjects" value="english"/>
+            <label for="english">English</label>
+            <input type="checkbox" id="hindi" name="subjects" value="hindi"/>
+            <label for="hindi">Hindi</label>
+        </div>
+        <div>
+            Choose your profession:
+            <select name="profession" id="profession">
+                <option>Select your option</option>
+                <option value="stu">Student</option>
+                <option value="dev">Developer</option>
+
+            </select>
+        </div>
+        <label for="vol"> Select your volume level:</label>
+        <input type="range" id="vol" min="0" max="100" name="vol" value="70">
+        <br>
+        <label for="feedback">Please give your valuable feedback :</label>
+        <textarea id="feedback" name="feedback" placeholder="write your feedback here"></textarea>
+        <button>submit</button>
+    </form>
+ </body>
+</html> 

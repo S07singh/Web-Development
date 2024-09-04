@@ -1,0 +1,136 @@
+/*  * This is one asterisk  which is universal selector, 
+    universal selector means it will select everthing.
+*/
+
+* {
+    font-family: 'Courier New';  
+}
+
+/* Element selector-->
+     h1 {
+         property: value;
+       }
+*/
+h1,h3 {
+    color: #b92b27;
+}
+
+/* Id selector--> Selects an element based in the
+    element's id attribute.
+*/
+#login {
+    background-color: white;
+}
+#signup {
+    background-color: #b92b27;
+    color: white;
+}
+
+/* Class selector */
+.upvote {
+    background-color: green;
+    color: aliceblue;
+}
+/* Descendant selector */
+.post a {
+    color: purple;
+    background-color: yellow;
+}
+
+nav ul li a {
+    color: hotpink;
+}  
+
+/* both are same */
+
+/* nav  a {
+    color: hotpink;
+}  */
+
+/* Sibling selector Combinator */
+p +h3 {
+     text-decoration: underline ;
+}
+
+.upvote + button {
+    background-color: cornflowerblue;
+    color: darkblue;
+}
+
+/* Child Combinator */
+div > input {
+    background-color: darksalmon;
+}
+
+/* Attribute Selector */
+
+input[type="text"] {
+    color: red;
+}
+
+input[type="password"]{
+    color: green;
+}
+
+div[id=myId] {
+    color: green;
+}
+
+/*Pseudo class  */
+
+/* 1 hover class */
+button:hover {
+    background-color: black;
+    color: white;
+}
+/* 2 actice class */
+
+button:active {
+    background-color: hotpink;
+    color: black;
+}
+p:active {
+    font-weight: bold;
+    color: green;
+}
+/* 3 checked */
+input[type="radio"]:checked + label {
+    color: red;
+    font-weight: bold;
+}
+/* 4 nth-of-type */
+div:nth-of-type(2n) {
+    background-color: blanchedalmond;
+}
+
+/* Pseudo Elements */
+h1::first-letter {
+    color: green;
+}
+
+p::first-line {
+    color: blue;
+}
+
+p::selection {
+    background-color: yellow;
+}
+/* Cascading--> those who come last there property will be applied */
+h3 {
+    background-color: yellow;
+}
+
+h3 {
+    background-color: blue;
+}
+
+/* Selector Specificity-->  id>class>element */
+/* more selector> less selector for css */
+/* if specificity same then we have to look at cascading */
+
+/* inline style are more specific than id---> inline style>id>class>element */
+/* !important--> if we apply this we will never able to change again */
+
+ /* h3 {
+    background-color: antiquewhite !important;
+ } */

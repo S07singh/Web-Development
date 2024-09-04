@@ -1,0 +1,50 @@
+/* Opacity-->Sets the opacity for the element
+Range from 0 to 1 */
+
+/* rgba-->red,green,blue,alpha(0-1 opacity) */
+/* div {
+    height: 200px;
+    width: 200px;
+    background-color: #4dff00ff;
+} */
+/* alpha-->dont clear inside element after removing alpha */
+/* #opacity {
+    background-color: #ffa511;
+    opacity: 1;
+} */
+/* OPacity--> clear everthing when opacity becomes zero */
+
+/* Transition
+    Transition Shorthand
+    property name|duration|Timing-function|delay
+    Transition:margin-top 2s ease-in-out 0.2s*/
+/* div {
+    height: 100px;
+    width: 100px;
+    background-color: #4dff00ff;
+    transition-duration: 1s;
+    transition-delay: 1s;
+
+}
+
+div:hover {
+   
+    background-color: black;
+    border-radius: 50%;
+} */
+
+div {
+    height: 100px;
+    width: 100px;
+    background-color: #4dff00ff;
+    margin: 0 auto;
+    margin-top: 10px;
+    transition: margin-top 2s ease-in 0.2s;
+
+}
+
+div:hover {
+    margin-top:400px;
+    background-color: pink;
+    
+}

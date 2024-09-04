@@ -1,0 +1,24 @@
+/* div {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: #7aa874;
+    margin: 10px auto;
+    box-shadow: 2px 2px 8px black;
+
+} */
+
+div {
+    width: 400px;
+    height: 200px;
+    background-color: #7aa874;
+    color: white;
+    margin: 10px auto;
+   background-image: url("photo.jpg");
+   /* background-size: contain; */
+   background-size: cover;
+   /* background-size: auto; */
+/*  contain--> no crop, no scale ,repeat
+    cover--> crop,no scale
+    auto---> stretch */
+}

@@ -1,0 +1,63 @@
+/* Question 1 */
+#mainTopic {
+    color: blue;
+}
+
+/* Question 2 */
+
+* {
+    text-align: center;
+}
+
+/* Question 3 */
+
+h1, h3, h5 {
+    font-family: Georgia;
+}
+
+/* Question 4 */
+
+.content {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+/* Question 5 */
+
+div button {
+    background-color: purple;
+    color: azure;
+}
+
+/* Question 6 */
+
+button:hover {
+    background-color: yellow;
+    color: blue;
+}
+
+/* Question 7 */
+
+p:nth-of-type(2n+1) {
+    color: yellow;
+}
+
+/* Question 8 */
+
+h1:first-letter {
+    color: red;
+}
+
+/* Question 9 */
+
+#yes:checked + label {
+    color: darkgreen;
+}
+
+/* Question 10 */
+
+/*  a. #mainContent
+    b. div.main
+    c. .main
+    d. h1
+ */
