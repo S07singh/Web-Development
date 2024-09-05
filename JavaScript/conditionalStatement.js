@@ -80,4 +80,107 @@ if (size === "XL"){
     console.log("Better luck next time!")
  }
 
+ // Question 2
+
+ let str = "apple"
+
+ if (str[0] == "a" && str.length > 3){
+    console.log("good string");
+ }else {
+    console.log("not a good string")
+ }
+// Question3
+ let num = 12;
+
+ if ((num%3 === 0) && ((num+1 == 15) || (num-1 == 11))) {
+    console.log("safe");
+ }else {
+    console.log("unsafe");
+ }
+
+ // in javascript falsy value--> false, 0, -0, On(Biglnt value), "", (empty string), null, undefined, NaN
+ // Everything else is true
+
+ let string = " ";
+
+ if (string) {
+    console.log ("string is not empty");
+ }else {
+    console.log ("string is empty")
+ }
+
+ let num1 = 0;
  
+ if (num){
+    console.log("num is not equal to 0");
+ }else {
+    console.log("num is equal to 0")
+ }
+
+ //switch statement
+
+ let clr = "red";
+
+ switch(clr) {
+    case "red" :
+        console.log("stop");
+        break;
+    case "yellow" :
+        console.log("slow down");
+        break;
+    case "green" :
+        console.log("go");
+        break;
+    default :
+        console.log("light is broken");
+        
+ }
+
+ // Question 4
+
+ let day = 8;
+
+ switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+ 
+    case 2:
+        console.log("Tuesday");
+        break;
+ 
+    case 3:
+        console.log("Wednesday");
+        break;
+ 
+    case 4:
+        console.log("Thursday");
+        break;
+ 
+    case 5:
+        console.log("Friday");
+        break;
+ 
+    case 6:
+        console.log("Saturday");
+        break;
+ 
+    case 7:
+        console.log("Sunday");
+        break;
+ 
+    default:
+        console.log("Invalid day!")
+ }
+
+//  alert("This is an alert!");
+ console.log("this is a simple log");
+console.error("this is a error msg");
+console.warn("this is a warning msg");
+
+// let yourName = prompt("enter your name :");
+// console.log(yourName)
+
+let fName = prompt("enter your fname:")
+let lName = prompt("enter your lname:")
+console.log("welcome", fName, lName,"!")
