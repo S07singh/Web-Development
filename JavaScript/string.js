@@ -39,7 +39,7 @@
 
 // STRING SLICING
 
-let msg = "Sudhir";
+// let msg = "Sudhir";
 
 // console.log(msg.slice(1))
 // console.log(msg.slice(1,4))
@@ -49,4 +49,28 @@ let msg = "Sudhir";
 
 
 // REPLACE 
+
+let msg = "Ilovecoding";
+
+console.log(msg.replace("love", "do"));
+console.log(msg.replace("o", "x")); // only first occurrences will change like Ilxvecoding.
+
+// REPEAT 
+let str = "Ilovecoding";
+console.log(msg.repeat(2)); // IlovecodingIlovecoding
+
+// Question
+
+let msg1 = "hello!";
+console.log(msg1.trim().toUpperCase()); /// HELLO!
+
+// Question 
+let name1 = "ApnaCollege";
+console.log(name1.slice(4,9)); // Colle
+console.log(name1.indexOf("na")); // 2
+console.log(name1.replace("Apna","Our")); // Ourcollege
+
+// Question
+console.log(name1.slice(4).replace('l','t')); // Cotlege
+console.log(name1.slice(4).replace('l','t').replace('l','t')); // Cottege
 
