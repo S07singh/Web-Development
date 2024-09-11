@@ -58,9 +58,125 @@ for(let i=1; ; i++){
 //     i--;
 // }
 
-let i = 0;
-while (i<=20) {
-    console.log(i);
-    i= i+2; // even
+// let i = 0;
+// while (i<=20) {
+//     console.log(i);
+//     i= i+2; // even
+// }
+
+// GAME
+
+// const favMovie = "avatar";
+
+// let guess = prompt ("guess my favorite movie");
+
+// while ( (guess != favMovie) && (guess != "quit")) {
+//     guess = prompt("wrong guess, please try again");
+// }
+// if (guess == favMovie) {
+//     console.log("congrats!!");
+    
+// } else {
+// console.log("you quit");
+// }
+
+// USE OF KEYWORD BREAK
+// const favMovie = "avatar";
+
+// let guess = prompt ("guess my favorite movie");
+
+// while  (guess != favMovie) {
+//     if(guess == "quit"){
+//         console.log("you quit");
+//         break;
+//     }
+//     guess = prompt("wrong guess, please try again");
+// }
+// if (guess == favMovie) {
+//     console.log("congrats!!");
+    
+// } 
+
+// ARRAY WITH LOOPS
+
+// let fruits = ["mango", "apple", "banana", "litchi", "orange"];
+
+// for (let i = 0; i<fruits.length; i++) {
+//     console.log(i, fruits[i]);
+// }
+
+// let heroes = [
+//     ["ironman", "spiderman", "thor"],
+//     ["superman", "wonder woman", "flash"]
+// ];
+
+// for(let i =0; i<heroes.length; i++){
+//     console.log(i, heroes[i], heroes[i].length);
+//     for(let j= 0; j<heroes[i].length; j++){
+//         console.log(`j= ${j}, ${heroes[i][j]}`); 
+//     }
+// }
+
+// let student = [ ["sudhir", 98], ["rahul", 87], ["anuj", 80] ];
+
+// for (let i = 0; i<student.length; i++){
+//     console.log(`info of student #${i+1}`);
+//     for (let j = 0; j<student.length; j++) {
+//         console.log(student[i][j]);        
+//     }
+// }
+
+//  // fro-of loop
+
+// let fruits = ["mango", "apple", "banana", "litchi", "orange"];
+
+// for (fruit of fruits){
+//     console.log(fruit);
+// }
+
+// for(char of "sudhir singh") {
+//     console.log(char);
+// }
+
+// let heroes = [["ironman", "spiderman", "thor"],["superman", "wonder woman", "flash"]];
+// // nested for-of loop
+// for(list of heroes) {
+//     for(name of list) {
+//         console.log(name);
+        
+//     }
+// }
+
+
+let todo = [];
+
+let req = prompt("please enter your request");
+
+while (true) {
+    if(req == "quit"){
+        console.log("quitting app");
+        break;
+    }
+
+    if(req == "list") {
+        console.log("-----------");
+        for(let i=0; i<todo.length; i++) {
+            console.log(i, todo[i]);            
+        }
+        console.log("-----------");
+    }else if (req == "add") {
+        let task = prompt("please enter the task you want to add")
+        todo.push(task);
+        console.log("task added");
+    } else if (req == "delete") {
+        let idx = prompt ("please enter the task index");
+        todo.splice(idx, 1);
+        console.log("task deleted");        
+    } else {
+        console.log("wrong request");
+        
+    }
+    req = prompt("please enter your request");
 }
+
 
