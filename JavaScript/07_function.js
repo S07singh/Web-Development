@@ -56,14 +56,14 @@ function printInfo(name, age) {
 printInfo("sudhir", 19); // sudhir's age is 19
 printInfo("rahul"); // rahul's age is undefined
 printInfo(14); // 14's age is undefined
-
+/*
 function sum(a,b) {
     console.log(a+b);
 }
 
 sum(7, 8); // 15
 sum(4, 5); // 9
-sum(1, 2); // 3
+sum(1, 2); // 3 */
 
 // Question 3
 function calculateAverage(a, b, c) {
@@ -84,7 +84,7 @@ function table(a) {
 table(20);
 
 // Return -> return keyword is used to return some value from the function.
-
+/*
 function sum(a,b) {
     console.log("hello");
     console.log("hello");
@@ -104,7 +104,7 @@ function isAdult(age) {
 }
 
 console.log(isAdult(34));
-
+*/
 // Question 5
 
 function sum1ton(n) {
@@ -131,3 +131,89 @@ function concat(str) {
 }
 
 console.log(concat(str));
+
+// Scope
+
+// Function Scope -> Variables defined inside a function are not
+// accessible (visible) from outside the function.
+
+let sum = 54; // Global Scope
+
+function calSum(a, b) {
+    let sum = a+b; // Function Scope
+    console.log(sum); // Function Scope is used
+}
+// if both global and function scope define then function scope takes precedence over global scope
+//if function scope not define then global scope is used for both them .
+
+calSum(1,2);
+console.log(sum); // Global Scope is used 
+
+// Block Scope -> Variables declared inside a {} block cannot be accessed from outside the block.
+{
+    let a =25;
+    var b =25;
+    const c =25;
+}
+
+// console.log(a); 
+// we cannot use able to use a and c because a and c are defined by using keyword let and const                
+console.log(b);
+// console.log(c);// in loop there is block {}
+
+// Lexical Scope 
+// a variable defined outside a function can be accessible inside 
+// another function defined after the variable declaration.
+// The opposite is NOT true.  
+// function outerFunc () {
+//     let x = 5;
+//     let y = 6;
+//     function innerFunc() {
+//         let a = 10;
+//         console.log(x);
+//         console.log(y);
+//     }
+//     console.log(a);
+//     innerFunc();
+// }
+
+// Question 7
+/*
+let greet = "hello"; // global scope 
+
+function changeGreet() {
+    let greet = "namaste"; // function scope
+    console.log(greet);
+    function innerGreet() {
+        console.log(greet); // lexical scope
+    }
+}
+console.log(greet); // only two output hello and namaste, innerfunc is never call.
+changeGreet(); */
+
+// Function Expression 
+/*
+let name = "sudhir"
+let sum2 = function (a,b) { // here  sum2 is variable name not function name 
+    // but we can call function by variable name also 
+    return a + b;
+}
+
+let hello = function () {
+    console.log("hello");
+}
+*/
+// function passed in function as arguments 
+ function multipleGreet(func, count) {
+    for (let i = 1; i <= count; i++) {
+        func(); 
+    }
+ }
+
+ let greet = function (){
+    console.log("hello");
+    
+ }
+
+ multipleGreet(greet, 3); /// do not pass it like this greet()
+
