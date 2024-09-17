@@ -19,7 +19,7 @@ const post = {
 };
 
 // GET VALUES OF OBJECT
-// 1. object_name[keys_name as string means in a ""]
+// 1. object_name[keys_name as string means in a double quote ""]
 // 2. using dot operator
 console.log(post["username"]);
 console.log(post.username); // we generally use dot operator

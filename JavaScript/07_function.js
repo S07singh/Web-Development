@@ -216,4 +216,5 @@ let hello = function () {
  }
 
  multipleGreet(greet, 3); /// do not pass it like this greet()
+ 
 

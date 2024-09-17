@@ -103,7 +103,7 @@ console.log(tertiary.splice(0,1,"black","grey")); // it will first remove one el
 
 let car = ['toyota', 'gwagon', 'xuv', 'maruti', 'bmw', 'ferrari'];
 
-console.log(car.sort()); // ['gwagon', 'bmw', 'ferrari', 'maruti','toyota' , 'xuv']
+console.log(car.sort()); // ['bmw', 'gwagon' , 'ferrari', 'maruti','toyota' , 'xuv']
 
 let chars = ['b','d', 'c','a'];
 console.log(chars.sort());  // ['a', 'b', 'c', 'd'] sort works here as we wish (in string), but for number it will not work as we wish
