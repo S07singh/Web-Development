@@ -218,3 +218,79 @@ let hello = function () {
  multipleGreet(greet, 3); /// do not pass it like this greet()
  
 
+ // Higher oder function
+
+//  let odd = function(n) {
+//     console.log(!(n%2 == 0)); 
+//  }
+
+
+//  let even = function(n) {
+//     console.log(n%2 == 0); 
+//  }
+
+ function oddOrEvenFactory(request) {
+    if(request == "odd" ){
+        let odd = function(n) {
+            console.log(!(n%2 == 0)); 
+         }
+    } else if(request == "even") {
+        let even = function(n) {
+            console.log(n%2 == 0); 
+         }
+
+         return even;
+    } else {
+        console.log("wrong request");
+        
+
+    }
+ }
+
+ let request = "odd";
+
+
+// methods
+
+const calculator = {
+    num: 55,
+    add : function(a, b) {
+        return a + b;
+    }, 
+    sub : function(a, b) {
+        return a - b;
+    }, 
+    mul : function(a, b) {
+        return a * b;
+    } 
+    
+}
+// objects one variable and three function 
+// we can access
+
+calculator.num;
+calculator.add(3,4);
+calculator.sub(3,4);
+calculator.mul(3,4); // in console
+
+// Math.PI;
+// Math.random;
+// Math.random();
+// Math.pop();
+// what we understand from this, Math is inbuilt object,it has some variable like
+// PI which has some value and some methods like random and etc.
+
+// string and array from javaScript is also internally object
+// if we type in console typeof[] it will return object 
+
+// Shorthand of object
+
+// const calculator = {
+//     add(a, b) {
+//         return a + b;
+//     },
+
+//     sub(a, b) {
+//         return a-b;
+//     }
+// };
