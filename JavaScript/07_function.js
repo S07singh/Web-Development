@@ -294,3 +294,26 @@ calculator.mul(3,4); // in console
 //         return a-b;
 //     }
 // };
+
+// this keyword 
+
+// "This" keyword refers to an object that is executing the current piece of code.
+
+const student = {
+    name : "sudhir",
+    age: 19,
+    eng: 87,
+    math: 99, 
+    phy: 98,
+    getAvg() {
+        console.log(this);
+        let avg = (this.eng + this.math + this.phy)/ 3; // here this keyword makes use of parameter.
+        console.log(`${this.name} got avg marks = ${avg}`);        
+    }
+}
+
+function getAvg() {
+    console.log(this);
+    // this will print window object which has some function like alert(), close(),etc.
+    
+}
