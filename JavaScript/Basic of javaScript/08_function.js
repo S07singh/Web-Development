@@ -88,12 +88,12 @@ const mul = (a, b) => a * b;
 // 
 console.log("hi there!");
 
-setTimeout(() => {
-    console.log("apna college");
+// setTimeout(() => {
+//     console.log("apna college");
     
-}, 4000); // timeout is milliseconds, 4000 means 4 seconds , apna college will be print after 4 seconds
+// }, 4000); // timeout is milliseconds, 4000 means 4 seconds , apna college will be print after 4 seconds
 
-console.log("welcome to");
+// console.log("welcome to");
 
 //set Interval
 
@@ -117,6 +117,7 @@ console.log("welcome to");
 // for stop it type clearinterval(id) it will stop the loop    
 
 // this with Arrow function
+// arrow -> lexical scope 
 const student = {
     name : "sudhir",
     marks : 98,
@@ -126,19 +127,36 @@ const student = {
         return this.name;
     },
     getMarks: () => {
-        console.log(this); // parent's scope -> window
+        console.log(this); // parent's scope -> window 
+        // iss this ka -> iske parent ka this and parent hai student to student ka scope hai window
         return this.marks;
     },
     getInfo1: function () {
-        setTimeout(() => {
-            console.log(this); // student
+        setTimeout(() => {// aur yaha arrow ka parent hai function and function ka scope hai student object
+            console.log(this); // student object
         }, 2000);
     },
     getInfo2: function () {
-        setTimeout(function () {
-            console.log(this); // window
+        setTimeout(function () { // normal function ko jo call lgta hai uska use hota hai this and settimeout is inbuild function of window that's why yaha pe window aa rha hai
+            console.log(this); // window object
         }, 2000);
     },
 }   
 
 // Question 1
+
+const square = (n) => (n*n);
+
+console.log(square(4));
+
+// Question 2
+
+//  let id = setInterval ( () => {
+//     console.log("Hello world");
+// }, 2000)
+
+// setTimeout(() => {
+//     clearInterval(id);
+//     console.log("clear Interval");
+    
+// }, 10000);
