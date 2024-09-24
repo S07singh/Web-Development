@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+}
+
+.btn {
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 2rem;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+}
+
+.orange {
+    background-color: rgb(233, 133, 76);
+}
+.pink {
+    background-color: rgb(209, 121, 187);
+}
+.green {
+    background-color: rgb(55, 145, 205);
+}
+.blue {
+    background-color: rgb(92, 96, 228);
+}
