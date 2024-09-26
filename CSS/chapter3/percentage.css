@@ -16,5 +16,5 @@ h1 {
     height: 100px;
     width: 100px;
     background-color: cornflowerblue;
-    margin-left: 10%; /* 10% wrt to heigth and width of outer div */
+    margin-left: 10%; /* 10% wrt to height and width of outer div */
 }

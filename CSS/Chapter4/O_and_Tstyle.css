@@ -7,12 +7,12 @@ Range from 0 to 1 */
     width: 200px;
     background-color: #4dff00ff;
 } */
-/* alpha-->dont clear inside element after removing alpha */
+/* alpha-->don't clear inside element after removing alpha */
 /* #opacity {
     background-color: #ffa511;
     opacity: 1;
 } */
-/* OPacity--> clear everthing when opacity becomes zero */
+/* OPacity--> clear everything when opacity becomes zero */
 
 /* Transition
     Transition Shorthand

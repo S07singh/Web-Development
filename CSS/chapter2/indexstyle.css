@@ -48,7 +48,7 @@ nav ul li a {
 }  */
 
 /* Sibling selector Combinator */
-p +h3 {
+p + h3 {
      text-decoration: underline ;
 }
 

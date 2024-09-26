@@ -5,6 +5,7 @@
     border: 2px solid black;
     background-color: pink;
     font-size: 10px;
+    
 }
 
 /* em---> Font size of the parent,in the case of typographical properties like font-size, and
@@ -34,3 +35,4 @@ section {
 div {
     font-size: 2rem;
 }
+

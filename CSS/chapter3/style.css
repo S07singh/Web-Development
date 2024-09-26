@@ -4,8 +4,8 @@
 
 /* Border---> USed to set an element's border
         1. border-width
-        2. boder-style
-        3. boder-color */
+        2. border-style
+        3. border-color */
 
 /* Border Shorthand
     width|style|color --> border: 5px solid black;
@@ -22,7 +22,7 @@
   1. padding-right
   2. padding-left
   3. padding-top
-  4. padding-buttom 
+  4. padding-bottom
 
   for all sides--> padding:50px;
   top & bottom|left & right--> padding: 1px 2px;
@@ -35,7 +35,7 @@
   1. Margin-right
   2. Margin-left
   3. Margin-top
-  4. Margin-buttom 
+  4. Margin-bottom 
   for all sides-->
   top & bottom|left & right--> 
   top|left & right |bottom--> 

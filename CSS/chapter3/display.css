@@ -1,4 +1,4 @@
-/* We know that h2 tag  is block function, but we can change it to inline by display function */
+/* We know that h2 tag  is block element, but we can change it to inline by display function */
 /* h2 {
     display: inline;
     background-color: pink;

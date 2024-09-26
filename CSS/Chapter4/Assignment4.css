@@ -47,7 +47,7 @@
       #myPic {
         width: 200px;
         height: 200px;
-        background: pink;
+        /* background: rgb(242, 146, 162); */
         background-image: url("man.jpg");
         background-size: cover;
         opacity: 50%;

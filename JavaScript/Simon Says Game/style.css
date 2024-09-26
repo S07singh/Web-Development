@@ -10,7 +10,7 @@ body{
     margin: 2rem;
 }
 
-.box-container {
+.btn-container {
     display: flex;
     justify-content: center;
 }
@@ -26,4 +26,12 @@ body{
 }
 .blue {
     background-color: rgb(92, 96, 228);
+}
+
+.flash {
+    background-color: white;
+}
+
+.userFlash {
+    background-color: green;
 }
