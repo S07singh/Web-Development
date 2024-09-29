@@ -35,24 +35,39 @@ function changeColor(color, delay) {
 });
 }
 
-changeColor("red", 1000)
-.then (() => {
-    console.log("red color was completed");
-    return changeColor("orange", 1000)   
-})
-.then (() => {
-    console.log("orange color was completed");
-    return changeColor("green", 1000)   
-})
-.then (() => {
-    console.log("green color was completed");
-    return changeColor("blue", 1000)   
-})
-.then (() => {
-    console.log("blue color was completed"); 
-});
+// changeColor("red", 1000)
+// .then (() => {
+//     console.log("red color was completed");
+//     return changeColor("orange", 1000)   
+// })
+// .then (() => {
+//     console.log("orange color was completed");
+//     return changeColor("green", 1000)   
+// })
+// .then (() => {
+//     console.log("green color was completed");
+//     return changeColor("blue", 1000)   
+// })
+// .then (() => {
+//     console.log("blue color was completed"); 
+// });
 
 
+// we can do same thing with async function 
+
+async function demo () {
+  await changeColor("red", 1000);
+  await changeColor("orange", 1000);
+  await changeColor("green", 1000);
+  changeColor("blue", 1000);
+}
+
+// here what we do extra is if promise is rejected then what will happen it will not print next element for that we can do 
+//  use try and catch put await in try and then 
+// catch (err) {
+// console.log("error caught")
+// console.log(err)
+//} 
 
 // callback hell -> callback nesting
 
@@ -212,3 +227,45 @@ savetoDb("apna college")
     });
 
 */
+
+/*
+async function greet() {
+  throw "404 page not found";
+  return "hello";
+}
+// just write async keyword to make normal function a promise
+greet()
+  .then ((result) => {
+      console.log("promise was resolved");
+      console.log("result was : ", result);
+  })
+  .catch((err) => {
+      console.log("promise was rejected with err : ", err);
+  })
+
+let demo = async () => {
+  return 5;
+};
+
+// Await keyword -> pause the execution of its surrounding async function until the promise is settled (resolved or rejected)
+
+
+function getNum () {
+  return new Promise((resolve, reject) => {
+      setTimeout(() => {
+          let num  = Math.floor(Math.random() * 10) + 1;
+          console.log(num);
+      }, 1000);
+  })
+}
+
+async function demo() {
+  await getNum();
+  await getNum();
+  await getNum();
+  await getNum();
+  getNum();
+}
+
+*/
+
