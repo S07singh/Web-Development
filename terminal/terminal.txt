@@ -1,0 +1,75 @@
+ls = list files(show my files) in the directory(folders)
+
+pwd = print working directory  
+(where am i?)
+
+clear = clear screen
+
+cd = change directory 
+
+cd (folder name)
+cd (folder name)/(folder name)
+
+if you want to come back then use the (cd ..)
+cd ../..
+
+cd Desktop/Delta(relative path) -> current location
+
+cd/users/shradhakhapra/Desktop(absolute path)
+
+/= root directory
+
+~ = home directory
+
+mkdir = make directory (its create folder not file) 
+
+mkdir hello
+
+mkdir /users/shradhakhapra/Desktop/Delta/hello
+it will create hello folder in Delta 
+we can use relative path and absolute path both for creation of new directory
+
+
+Flags-> Flags are characters that we pass with commands to modify the their behavior
+
+manual commands
+
+man ls - give info about ls commands
+man mkdir - give info about mkdir commands
+
+with Flags
+
+ls -l
+ls -a
+ls -la
+
+
+touch commands
+used to create files
+
+touch index.html
+touch app.js
+touch abc.txt
+
+what all these do create files in folder.
+
+Deleting files & folders
+rm - removes files
+rmdir - removes empty folders 
+rm -rf - removes any folders
+
+we can delete files & folders but keep in mind that if you delete it thoroughly, you terminal you cannot get  it back.
+for deletion we use commands
+rm filesnames 
+we can delete multiple files just give space between them
+
+like 
+rm app.js index.html styles.css abc.txt 
+
+rmdir use for deletion of empty folders(directory)
+
+to delete some folder which have some data then we have to use -rf Flags
+
+r for recursive delete and f for forced
+
+rm -rf - recursive force [remove with force]

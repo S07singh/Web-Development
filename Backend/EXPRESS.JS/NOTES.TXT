@@ -1,0 +1,20 @@
+Library v/s Framework 
+
+Library 
+A Library is a collection of pre-written code that can be used to perform specific tasks.
+
+eg. axios
+
+framework 
+
+A framework is a set of pre-written code that provides a structure for developing software applications.
+
+eg. express 
+
+Express - A node.js web application framework that helps us to 
+make web applications 
+It is used for server side programming.
+1. listen for incoming requests
+2. parsing
+3. match responses with routes
+4. responses

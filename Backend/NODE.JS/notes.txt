@@ -1,0 +1,39 @@
+
+/*
+ NPM (Node Package Manager)
+
+ npm is the standard package manger for Node.js
+ npm is a platform for JavaScript packages.
+ npm is used to install, share, and manage JavaScript packages.
+ npm is also used to automate the process of installing dependencies, running tests, and publishing packages.
+ npm init - create a new package.json file
+ npm install - install packages
+ 
+*/
+
+
+// node_modules The node modules folder containing the every installed dependency for your project.
+
+// package-lock.json It records the exact version of every installed dependency, including its sub-dependencies and their version.
+
+//package.json The package.json file contains descriptive and functional metadata about a project, such as a name, version, and dependencies.
+// if node_modules delete, we can download with the command (npm install) in terminal
+
+// for making your own package.json use the command (npm init) in terminal
+
+we can download package locally and globally also  then we have to link it
+it goods practice to download the package locally
+
+npm install -g <- package name ->
+npm link <- package name ->
+
+
+---> import {sum} form "./math.js"
+for this first export it.
+then in package.json mention type module
+
+difference between require and import 
+we can't selectively load only the pieces we need with require with import,
+we can selectively lead only the pieces we need , which can save memory.
+
+Loading is synchronous for 'require' but can be asynchronous for 'import'.
