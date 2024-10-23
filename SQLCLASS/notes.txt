@@ -1,0 +1,229 @@
+CREATE DATABASE college;
+
+CREATE DATABASE IF NOT EXISTS instagram;
+
+USE instagram;
+
+CREATE TABLE user (
+id INT,
+age INT,
+name VARCHAR(30) NOT NULL,
+email VARCHAR(50) UNIQUE,
+followers INT DEFAULT 0,
+following INT,
+CONSTRAINT CHECK (age >= 13),
+PRIMARY KEY (id)
+);
+
+INSERT INTO user 
+(id, age, name, eamil, followers, following)
+VALUES
+(1, 14, "adam", "adam@yahoo.in", 123, 145),
+(2, 15, "bob", "bob@gmail.com", 200, 200),
+(3, 16, "casey", "casey@gmail.com", 300, 306),
+(4, 17, "donald", "donald@gmail.com", 200, 105);
+
+INSERT INTO user 
+(id, age, name, eamil, followers, following)
+VALUES
+(5, 14, "eve", "eve@yahoo.in", 400, 145),
+(6, 16, "farah", "farah@gmail.com", 10000, 1000);
+
+CREATE TABLE post (
+id INT PRIMARY KEY,
+content VARCHAR (100),
+user_id INT,
+FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+INSERT INTO post
+(id, content, user_id)
+VALUES
+(101, "Hello World", 3),
+(102, "Bye Bye", 1),
+(103, "Hello Delta", 3);
+
+SELECT * from post;
+
+SELECT id, name, eamil FROM user;
+
+SELECT NAME, AGE
+FROM USER 
+WHERE AGE + 1 = 18;
+
+SELECT NAME, AGE, followers
+FROM USER 
+WHERE AGE > 15 AND followers > 200;
+
+SELECT NAME, AGE, followers
+FROM USER 
+WHERE AGE > 15 or followers > 200;
+
+SELECT NAME, AGE, followers
+FROM USER 
+WHERE AGE BETWEEN 15 AND 17;
+
+SELECT NAME, eamil, followers
+FROM USER 
+WHERE eamil IN ("donald@gmail.com", "bob@gmail.com", "abc@gmail.com");
+
+SELECT NAME, age, eamil, followers
+FROM USER 
+WHERE age IN (14, 16);
+
+SELECT NAME, age, eamil, followers
+FROM USER 
+WHERE age  NOT IN (14, 16);
+
+SELECT NAME, age, eamil, followers
+FROM USER 
+WHERE age > 14
+LIMIT 2;
+
+SELECT NAME, age, eamil, followers
+FROM USER 
+LIMIT 2;
+
+SELECT name, age, followers
+FROM user
+ORDER BY followers DESC;
+
+SELECT max(followers) 
+FROM user;
+
+SELECT count(age)
+FROM user
+WHERE AGE = 14;
+
+SELECT MIN(AGE) 
+FROM user;
+
+SELECT AVG(AGE) 
+FROM user;
+
+SELECT SUM(followers) 
+FROM user;
+
+SELECT age, max(followers)
+FROM user 
+GROUP BY age;
+
+SELECT age, max(followers)
+FROM user 
+GROUP BY age
+HAVING max(followers) > 200;
+
+SELECT age, max(followers)
+FROM user 
+GROUP BY age
+HAVING max(followers) > 200
+ORDER BY age DESC;
+
+UPDATE user
+SET followers = 600
+WHERE age = 16;
+
+DELETE FROM user
+WHERE age = 15;
+
+ALTER TABLE user
+ADD COLUMN city VARCHAR(25) DEFAULT "delhi";
+
+ALTER TABLE user
+DROP COLUMN age;
+
+ALTER TABLE instaUser
+RENAME TO user;
+
+ALTER TABLE user
+CHANGE COLUMN eamil email VARCHAR(50);
+
+SELECT * FROM user;
+
+SET SQL_SAFE_UPDATES= 0;
+
+
+
+
+
+
+USE college;
+
+CREATE TABLE teacher (
+id INT PRIMARY KEY,
+name VARCHAR(30),
+subject VARCHAR(30),
+salary INT
+);
+
+INSERT INTO teacher 
+(id, name, subject, salary)
+VALUES
+(23, "ajay", "math", 50000),
+(47, "bharat", "english", 60000),
+(18, "chetan","chemistry", 45000),
+(9, "divya", "physics", 80000);
+
+SELECT * FROM teacher;
+
+SELECT * FROM teacher
+where salary > 55000;
+
+ALTER TABLE teacher
+CHANGE COLUMN salary ctc INT;
+
+UPDATE teacher
+SET  ctc = ctc + ctc * 0.25;
+
+ALTER TABLE teacher
+ADD COLUMN city VARCHAR(50) DEFAULT "GURUGOAN";
+
+ALTER TABLE teacher
+DROP COLUMN ctc;
+
+DROP TABLE student;
+
+CREATE TABLE student (
+rollno INT PRIMARY KEY,
+name VARCHAR(30),
+city VARCHAR(30),
+marks INT
+);
+
+INSERT INTO student
+(rollno, name, city, marks)
+VALUES
+(110, "adam", "Delhi", 76),
+(108, "bob", "Mumbai", 65),
+(124, "casey", "pune", 94),
+(112, "duke", "pune", 80);
+
+SELECT * FROM STUDENT;
+
+SELECT * FROM STUDENT
+WHERE marks > 75;
+
+SELECT DISTINCT city
+FROM student;
+
+SELECT city, max(marks)
+FROM student
+GROUP BY city;
+
+SELECT avg(marks)
+FROM student;
+
+ALTER TABLE student
+ADD COLUMN grade VARCHAR(2);
+
+UPDATE student
+SET grade = "O"
+WHERE marks >= 80;
+
+UPDATE student
+SET grade = "A"
+WHERE marks >= 70 AND marks < 80;
+
+UPDATE student
+SET grade = "B"
+WHERE marks >= 60 AND marks < 70;
