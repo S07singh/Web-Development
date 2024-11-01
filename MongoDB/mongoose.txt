@@ -1,0 +1,345 @@
+PS C:\Users\sudhi> mongosh
+Current Mongosh Log ID: 671bbd0b007c9e492a86b01c
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.2
+Using MongoDB:          8.0.1
+Using Mongosh:          2.3.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-10-21T21:48:30.628+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> "sudhir".toUpperCase
+[Function: toUpperCase]
+test> "sudhir".toUpperCase();
+SUDHIR
+test>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+test> show dbs
+admin        40.00 KiB
+config       48.00 KiB
+local        40.00 KiB
+unversitydb   8.00 KiB
+test> use universitydb
+switched to db universitydb
+universitydb> show dbs
+admin        40.00 KiB
+config       48.00 KiB
+local        40.00 KiB
+unversitydb   8.00 KiB
+universitydb> show collections
+
+universitydb> db.universitydb.insertOne({ name: "adam", age: 19, marks: 88})
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('671bc73c007c9e492a86b01d')
+}
+universitydb> db.university.find();
+
+universitydb> db.university.find()
+
+universitydb> db.universitydb.find()
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  }
+]
+universitydb> db.universitydb.find();
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  }
+]
+universitydb> db.universitydb.insertOne( { name: "bob", city: "Delhi", marks: 75 } )
+{
+  acknowledged: true,
+  insertedId: ObjectId('671bc91c007c9e492a86b01e')
+}
+universitydb> db.universitydb.find();
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 75
+  }
+]
+universitydb> db.universitydb.insertMany([ {name: "catlyn", marks: 64, city: "Delhi" }, { name: "donald", marks: 58, city: "mumbai"}]
+... db.universitydb.insertMany([ {name: "catlyn", marks: 64, city: "Delhi" }, { name: "donald", marks: 58, city: "mumbai"}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (2:0)
+
+  1 | db.universitydb.insertMany([ {name: "catlyn", marks: 64, city: "Delhi" }, { name: "donald", marks: 58, city: "mumbai"}]
+> 2 | db.universitydb.insertMany([ {name: "catlyn", marks: 64, city: "Delhi" }, { name: "donald", marks: 58, city: "mumbai"}])
+    | ^
+  3 |
+
+universitydb> db.universitydb.insertMany([ {name: "catlyn", marks: 64, city: "Delhi" }, { name: "donald", marks: 58, city: "mumbai"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('671bcaa5007c9e492a86b01f'),
+    '1': ObjectId('671bcaa5007c9e492a86b020')
+  }
+}
+universitydb> db.universitydb.find()
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 75
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b01f'),
+    name: 'catlyn',
+    marks: 64,
+    city: 'Delhi'
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b020'),
+    name: 'donald',
+    marks: 58,
+    city: 'mumbai'
+  }
+]
+universitydb> db.universitydb.find( city: "Delhi")
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:26)
+
+> 1 | db.universitydb.find( city: "Delhi")
+    |                           ^
+  2 |
+
+universitydb> db.universitydb.find( {city: "Delhi"})
+[
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 75
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b01f'),
+    name: 'catlyn',
+    marks: 64,
+    city: 'Delhi'
+  }
+]
+universitydb> db.universitydb.findOne( {city: "Delhi"})
+{
+  _id: ObjectId('671bc91c007c9e492a86b01e'),
+  name: 'bob',
+  city: 'Delhi',
+  marks: 75
+}
+universitydb> db.universitydb.find({city: "Delhi", marks: 75})
+[
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 75
+  }
+]
+universitydb> db.universitydb.find( { $or: [ { marks: {$gt: 75}}, {city: "Delhi"}]})
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 75
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b01f'),
+    name: 'catlyn',
+    marks: 64,
+    city: 'Delhi'
+  }
+]
+universitydb> db.universitydb.find({ marks: { $gt: 75}})
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  }
+]
+universitydb> db.universitydb.find( {city: { $in: ["Delhi", "Mumbai"]}})
+[
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 75
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b01f'),
+    name: 'catlyn',
+    marks: 64,
+    city: 'Delhi'
+  }
+]
+universitydb> db.universitydb.updateOne( { name: "adam"}, {$set: { marks: 99}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+universitydb> db.student.find()
+
+universitydb> show collections
+universitydb
+universitydb> db.universitydb.find()
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 99
+  },
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 75
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b01f'),
+    name: 'catlyn',
+    marks: 64,
+    city: 'Delhi'
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b020'),
+    name: 'donald',
+    marks: 58,
+    city: 'mumbai'
+  }
+]
+universitydb> db.universitydb.updateMany( {city: "Delhi"}, { $set: {city: "New Delhi"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+universitydb> db.universitydb.replaceOne( {name: "bob"}, {name: "sudhir", marks: 94, state: Bihar})
+ReferenceError: Bihar is not defined
+universitydb> db.universitydb.replaceOne( {name: "bob"}, {name: "sudhir", marks: 94, state: "Bihar"})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+universitydb> db.universitydb.find()
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 99
+  },
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'sudhir',
+    marks: 94,
+    state: 'Bihar'
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b01f'),
+    name: 'catlyn',
+    marks: 64,
+    city: 'New Delhi'
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b020'),
+    name: 'donald',
+    marks: 58,
+    city: 'mumbai'
+  }
+]
+universitydb> db.universitydb.insertOne( {name: "farah", performance: {marks: 88, grade: "A"}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('671bd9cc007c9e492a86b021')
+}
+universitydb> db.universitydb.deleteOne( { state: "Mumbai"})
+{ acknowledged: true, deletedCount: 0 }
+universitydb> db.universitydb.deleteOne( { state: "mumbai"})
+{ acknowledged: true, deletedCount: 0 }
+universitydb> db.universitydb.deleteOne( { city: "mumbai"})
+{ acknowledged: true, deletedCount: 1 }
+universitydb> db.universitydb.find()
+[
+  {
+    _id: ObjectId('671bc73c007c9e492a86b01d'),
+    name: 'adam',
+    age: 19,
+    marks: 99
+  },
+  {
+    _id: ObjectId('671bc91c007c9e492a86b01e'),
+    name: 'sudhir',
+    marks: 94,
+    state: 'Bihar'
+  },
+  {
+    _id: ObjectId('671bcaa5007c9e492a86b01f'),
+    name: 'catlyn',
+    marks: 64,
+    city: 'New Delhi'
+  },
+  {
+    _id: ObjectId('671bd9cc007c9e492a86b021'),
+    name: 'farah',
+    performance: { marks: 88, grade: 'A' }
+  }
+]
+universitydb> db.universitydb.deleteMany( {marks: { $lt: 75}})
+{ acknowledged: true, deletedCount: 1 }
+universitydb> db.universitydb.deleteMany()
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.deleteMany)
+universitydb> db.universitydb.deleteMany({})
+{ acknowledged: true, deletedCount: 3 }
+universitydb> db.dropDatabase()
+{ ok: 1, dropped: 'universitydb' }
+universitydb> show dbs
+admin        40.00 KiB
+config       96.00 KiB
+local        40.00 KiB
+unversitydb   8.00 KiB
+universitydb>
